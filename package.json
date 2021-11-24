@@ -1,0 +1,27 @@
+{
+  "name": "lumiere-client-node",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Lumiere lighting to set lights.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Alan Palazzolo",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^4.3.2",
+    "dotenv": "^10.0.0",
+    "socket.io-client": "^4.4.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "none"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
