@@ -2,6 +2,8 @@
 import dotenv from 'dotenv';
 import debugSetup from 'debug';
 import { io } from 'socket.io-client';
+import { apiDomain } from './lib/config.js';
+import { updateLights } from './lib/lights.js';
 
 // Environment configuration
 dotenv.config();
@@ -10,19 +12,20 @@ dotenv.config();
 const debug = debugSetup('lumiere:client');
 
 // Connect socket
-const socket = io(process.env.API_DOMAIN);
+const socket = io(apiDomain);
 
 // Connect
 socket.on('connect', () => {
   debug(`Socket connect: ${socket.id}`);
 
-  // Send initial request for lights
-  socket.emit('lights:get');
-
   // Listen for events
   socket.on('lights', (data) => {
     debug(data);
+    updateLights(data);
   });
+
+  // Send initial request for lights
+  socket.emit('lights:get');
 });
 
 // Disconnect
