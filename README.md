@@ -16,6 +16,8 @@ The following are environment variables for configuration.  A `.env` file can be
 - `BRIGHTNESS`: Brightness of LEDs (`0`-`255`); defaults to `255`.
 - `STRIP_TYPE`: LED light configuration.  Can be `rgb`, `grb`, etc; defaults to `rgb`.
 - `DEBUG`: What to debug; to get just the lumiere output, use `lumiere:*`
+- `FRAME_RATE`: The frame rate of animations in frames per second.  Defaults to `30`.
+- `MAX_SPREAD`: When displaying pixels, the spread is the amount of repeating of a color.  Should be 1 or great; defaults to `5`.
 
 ## Deplopyment
 
